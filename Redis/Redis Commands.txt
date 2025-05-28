@@ -1,0 +1,225 @@
+# Redis commands:
+
+
+## 1. String Commands
+
+ SET key value                 Set a string value to a key.        
+ GET key                       Get the value of a key.             
+ DEL key                       Delete a key.                       
+ EXISTS key                    Check if a key exists.              
+ INCR key                      Increment integer value by 1.       
+ DECR key                      Decrement integer value by 1.       
+ INCRBY key n                  Increment value by n.             
+ DECRBY key n                  Decrement value by n.             
+ APPEND key value              Append value to existing string.    
+ STRLEN key                    Get string length.                  
+ SETEX key seconds value       Set key with expiration.            
+ GETSET key value              Set new value and return old value. 
+ MSET key1 val1 key2 val2 ...  Set multiple keys.                  
+ MGET key1 key2 ...            Get multiple values.                
+
+
+## 2. List Commands
+
+ LPUSH key value        Push to the left (start).     
+ RPUSH key value        Push to the right (end).      
+ LPOP key               Remove and return first item. 
+ RPOP key               Remove and return last item.  
+ LRANGE key start stop  Get items by range.           
+ LLEN key               Get list length.              
+ LREM key count value   Remove items by value.        
+ LSET key index value   Set item at index.            
+ LINDEX key index       Get item at index.            
+ LTRIM key start stop   Trim list to range.           
+
+
+## 3. Set Commands
+
+ SADD key member       Add item to set.                 
+ SREM key member       Remove item from set.            
+ SMEMBERS key          Get all items.                   
+ SISMEMBER key member  Check if item exists.            
+ SCARD key             Get set size.                    
+ SPOP key              Remove and return random item.   
+ SRANDMEMBER key       Return random item (no removal). 
+ SUNION key1 key2      Union of sets.                   
+ SINTER key1 key2      Intersection of sets.            
+ SDIFF key1 key2       Difference of sets.              
+
+
+## 4. Hash Commands
+
+ HSET key field value       Set a field in hash.       
+ HGET key field             Get field value.           
+ HDEL key field             Delete field from hash.    
+ HGETALL key                Get all fields and values. 
+ HKEYS key                  Get all field names.       
+ HVALS key                  Get all values.            
+ HEXISTS key field          Check if field exists.     
+ HLEN key                   Count fields.              
+ HMSET key field1 val1 ...  Set multiple fields.       
+ HMGET key field1 field2    Get multiple field values. 
+ HINCRBY key field n        Increment field by n.    
+
+
+## 5. Sorted Set (ZSet) Commands
+
+ ZADD key score member           Add item with score.                    
+ ZREM key member                 Remove item.                            
+ ZRANGE key start stop           Get items by index range (low to high). 
+ ZREVRANGE key start stop        Get items (high to low).                
+ ZRANK key member                Get index of item.                      
+ ZREVRANK key member             Reverse rank of item.                   
+ ZSCORE key member               Get score of item.                      
+ ZCARD key                       Get count.                              
+ ZCOUNT key min max              Count items by score range.             
+ ZRANGEBYSCORE key min max       Get items by score range.               
+ ZREMrangebyrank key start stop  Remove items by index range.            
+ ZREMrangebyscore key min max    Remove items by score range.            
+
+
+## 6. Key Commands (All Types)                     
+
+ KEYS pattern        List keys matching pattern.       
+ EXPIRE key seconds  Set key expiration.               
+ TTL key             Time to live (remaining seconds). 
+ PERSIST key         Remove expiration.                
+ RENAME key newkey   Rename a key.                     
+ TYPE key            Get the data type of key.         
+
+
+## 7. Bitmap Commands (Bit-level String)
+
+ SETBIT key offset value           Set bit at offset (0 or 1).                     
+ GETBIT key offset                 Get bit at offset.                              
+ BITCOUNT key                      Count bits set to 1.                            
+ BITOP op destkey key1 [key2 ...]  Bitwise operations (AND, OR, XOR, NOT). 
+
+
+## 8. HyperLogLog Commands (Approximate Count)
+
+ PFADD key element                Add item to HyperLogLog.     
+ PFCOUNT key                      Count unique items.          
+ PFMERGE destkey source1 source2  Merge multiple HyperLogLogs. 
+
+
+## 9. Geo Commands
+
+ GEOADD key lon lat member                 Add geo location.             
+ GEOPOS key member                         Get coordinates.              
+ GEODIST key mem1 mem2                     Get distance between members. 
+ GEORADIUS key lon lat radius unit         Members within radius.        
+ GEORADIUSBYMEMBER key member radius unit  Members near member.          
+
+
+## 10. Stream Commands
+
+ XADD key * field value        Add entry to stream.    
+ XRANGE key start end          Read range from stream. 
+ XREAD COUNT n STREAMS key id  Read new entries.       
+ XDEL key id                   Delete an entry.        
+ XLEN key                      Length of stream.       
+ XGROUP CREATE                 Create consumer group.  
+ XREADGROUP                    Read using group.       
+
+
+## 11. Pub/Sub Commands
+
+ PUBLISH channel message  Publish message.                  
+ SUBSCRIBE channel        Subscribe to channel.             
+ UNSUBSCRIBE channel      Unsubscribe from channel.         
+ PSUBSCRIBE pattern       Subscribe to channels by pattern. 
+ PUNSUBSCRIBE pattern     Unsubscribe from pattern.         
+
+
+In addition to data-type specific commands, Redis includes several other categories of commands that are essential for:
+
+* Server management
+* Transactions
+* Scripting
+* Cluster
+* Security
+* Performance
+
+
+## 12. Transaction Commands
+
+MULTI     Start a transaction block.
+EXEC      Execute queued commands.  
+DISCARD   Cancel transaction.       
+WATCH key Watch keys for changes.   
+UNWATCH   Unwatch keys.             
+
+## 13. Scripting (Lua)
+
+EVAL script numkeys key1 key2 ... Run Lua script.           
+EVALSHA sha1 numkeys key1 ...     Run cached script by hash.
+SCRIPT LOAD script                Load script to cache.     
+SCRIPT FLUSH                      Remove all cached scripts.
+SCRIPT EXISTS sha1 [sha2 ...]     Check if script exists.   
+SCRIPT KILL                       Kill current script.      
+
+## 14. Server/Connection Commands
+
+PING                 Test if server is alive.      
+ECHO message         Echo message.                 
+SELECT db            Switch DB. Default is 0.    
+FLUSHDB              Delete all keys in current DB.
+FLUSHALL             Delete all keys in all DBs.   
+DBSIZE               Count keys in DB.             
+TIME                 Get server time.              
+INFO                 Server stats and info.        
+CLIENT LIST          List connected clients.       
+CLIENT KILL ip:port  Kill a client connection.     
+CONFIG GET key       Get config value.             
+CONFIG SET key value Change config at runtime.     
+SAVE                 Save DB to disk (sync).       
+BGSAVE               Save DB to disk in background.
+LASTSAVE             Get last save time.           
+
+
+
+## 15. Persistence Commands
+
+SAVE         Synchronous save to disk.             
+BGSAVE       Asynchronous save.                    
+BGREWRITEAOF Rewrite AOF file in background.       
+LASTSAVE     Timestamp of last successful save.    
+AOF          Append-Only File mode for persistence.
+
+## 16. Replication (Master/Replica)
+
+SLAVEOF host port   Make current server a replica.
+REPLICAOF host port (Same as above; newer alias). 
+INFO replication    Replication status.           
+
+
+## 17. Cluster Commands
+
+CLUSTER INFO           Cluster details.        
+CLUSTER NODES          List cluster nodes.     
+CLUSTER MEET ip port   Add node to cluster.    
+CLUSTER FORGET node-id Remove a node.          
+CLUSTER SLOTS          Show key slot mapping.  
+CLUSTER KEYSLOT key    Show hash slot of a key.
+
+## 18. Authentication & ACL
+
+AUTH password            Authenticate to server.
+ACL LIST                 Show ACL rules.        
+ACL USERS                List users.            
+ACL SETUSER username ... Set permissions.       
+ACL GETUSER username     Get user rules.        
+ACL DELUSER username     Delete user.           
+ACL LOAD                 Reload from file.      
+ACL SAVE                 Save ACLs to file.     
+
+## 19. Monitoring and Debugging
+
+MONITOR          Show all commands as they run.
+SLOWLOG          View slow logs.       
+DEBUG OBJECT key Show internals of a key.      
+MEMORY USAGE key Estimate memory used.         
+MEMORY STATS     Memory usage summary.         
+
+                                                                                                  The End :) 

@@ -1,0 +1,43 @@
+## What is Docker?
+
+Docker is a platform that allows you to create, deploy, and run applications inside containers.
+
+* Containers are lightweight, portable environments that package your app with everything it needs to run — including code, runtime, system tools, libraries, and settings.
+* This means your app can run consistently and reliably anywhere — on your laptop, on servers, or in the cloud.
+
+
+## Why do we need Docker?
+
+1. "It works on my machine" problem solved
+   Your app behaves the same on any machine because everything it needs is inside the container.
+
+2. Easy to deploy and scale
+   Containers start fast and use fewer resources than traditional virtual machines, so you can run many on one server.
+
+3. Simplifies dependency management
+   No more "dependency hell" where different versions break your app. The container has its own isolated environment.
+
+4. Improves development workflow
+   Developers can share their containers and environments easily. Dev, test, and production environments are consistent.
+
+5. Better resource utilization
+   Containers share the host OS kernel, making them more efficient than virtual machines.
+
+
+## Basic Docker Terminology
+
+ 1. Docker Image      
+   A read-only template with instructions to create a container. Think of it as a snapshot or blueprint of your app and environment.                                                           
+ 2. Docker Container  
+   A running instance of a Docker image. It’s the actual environment where your app runs. Containers are isolated from each other and the host system.                                            
+ 3. Dockerfile        
+   A text file with instructions to build a Docker image automatically. Contains commands like what base image to use, what files to copy, and which commands to run.                        
+ 4. Docker Hub        
+   A public registry (like GitHub for code) where people share Docker images. You can pull images from here or push your own.                                                                    
+ 5. Volume            
+   A persistent storage mechanism to keep data outside the container’s lifecycle (so data is not lost when container stops).                                                                   
+ 6. Network           
+   Docker manages networking so containers can communicate with each other and the outside world securely.                                                                                   
+ 7. Docker Compose    
+   A tool to define and run multi-container Docker applications using a YAML file (`docker-compose.yml`). Useful for apps like MERN stack where you have backend, frontend, and database containers. 
+

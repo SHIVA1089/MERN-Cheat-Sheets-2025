@@ -89,7 +89,7 @@ git submodule add <repo>    Add a submodule inside a repo.
 git submodule init          Initialize submodules.                 
 git submodule update        Update submodules to match repo config.
 
-### 📤15. Archiv
+### 📤15. Archive
 git archive -o out.zip HEAD    Create a zip archive of the latest code.
 
                                                                                  The End :)

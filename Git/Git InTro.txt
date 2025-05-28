@@ -1,0 +1,109 @@
+### 🔧 What is Git?
+      Git is a version control system (VCS) that helps you track and manage changes to your code over time.
+
+#### 📌 Think of Git like: A "Time Machine" for your code.
+
+It lets you:
+
+* Save versions (called commits) of your project.
+* Revert to an older version if something breaks.
+* Work on features independently using branches.
+* Collaborate with others without overwriting each other’s work.
+
+
+
+### 🌐 What is GitHub?
+  GitHub is an online platform that hosts your Git repositories on the cloud.
+
+#### 📌 Think of GitHub like:
+  A "Google Drive" for your code projects + social media for developers.
+
+It lets you:
+
+* Store code online.
+* Collaborate with others.
+* Share your work publicly or privately.
+* Showcase your projects (great for portfolios).
+* Contribute to open-source projects.
+
+
+### ❓ Why do we need Git?
+
+ ✅ Reason                           🔍 Explanation                                           
+
+ 🔄 Track changes                   Know what changed, when, and by whom                     
+ 💥 Undo mistakes                   Easily go back to a working version if things break      
+ 🌿 Work on features independently  Use branches to work without affecting the main codebase 
+ 👥 Team collaboration              Multiple people can work together without conflict       
+ 📜 Documentation of history        Every commit tells a story of project evolution          
+
+
+### 🚀 In short:
+
+* Git = Local version control system.
+* GitHub = Cloud-based platform to store and share Git repositories.
+
+
+### 🛠️ Git Terminologies
+
+ Term             Definition                                                            
+
+ Repository       A storage location for your project files and version history.            
+ Commit           A saved change or snapshot of your project.                               
+ Clone            A copy of a remote repository downloaded to your local system.            
+ Push             Upload local changes to a remote repository.                              
+ Pull             Download changes from a remote repository to your local system.           
+ Branch           A separate line of development within a repository.                       
+ Merge            Combine changes from one branch into another.                             
+ Remote           A version of the repository hosted on the internet.                       
+ Status           Shows the current state of your working directory and staging area.       
+ Stage / Staging  Preparing files to be committed by adding them to the staging area.       
+ HEAD             A pointer to the latest commit in the current branch.                     
+ Conflict         Occurs when two changes clash and Git needs help to decide which to keep. 
+ Git              A version control system used to track code changes.                      
+
+
+
+### 🌐 GitHub Terminologies
+
+ Term          Definition                                                             
+ 
+ GitHub        A cloud-based platform for hosting and managing Git repositories.          
+ Fork          A personal copy of someone else’s repository on GitHub.                    
+ Pull Request  A request to merge changes from one branch or fork into another on GitHub. 
+
+
+
+# Git Workflow
+  ├── 1. Setup
+  │     ├── git config (name, email, default branch)
+  │     └── git init / git clone
+  │
+  ├── 2. Working Directory
+  │     ├── Modify files
+  │     ├── git status (check changes)
+  │     └── git add (stage changes)
+  │
+  ├── 3. Commit
+  │     └── git commit -m "message"
+  │
+  ├── 4. Branching
+  │     ├── git branch (list/create)
+  │     ├── git checkout (switch)
+  │     └── git merge (combine branches)
+  │
+  ├── 5. Remote Repo
+  │     ├── git remote add origin <url>
+  │     ├── git push (upload changes)
+  │     └── git pull (fetch + merge)
+  │
+  ├── 6. Undo / Fix
+  │     ├── git reset (unstage)
+  │     ├── git checkout -- <file> (discard changes)
+  │     ├── git revert (undo commit)
+  │     └── git stash (save work temporarily)
+  │
+  └── 7. Inspect & Log
+        ├── git log (history)
+        ├── git diff (changes)
+        └── git status (current state)

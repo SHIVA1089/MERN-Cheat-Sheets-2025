@@ -1,0 +1,97 @@
+Git commands:
+
+## 🗂️1. Configuration Command
+
+git config --global user.name "SHIVA WEBDEV"        Set your Git username globally.                               
+git config --global user.email "shiva@origin.com" Set your Git email globally.                                  
+git config --global init.defaultBranch main      Set the default branch name to main when running git init.
+git config --global color.ui auto                Enable colored Git output in the terminal.                    
+git config --list                                Show all configured Git settings.                             
+
+## 📁2. Repository Command
+
+git init             Create a new local Git repository.       
+git clone <repo-url> Make a local copy of a remote repository.
+
+## 🔍3. Status & Info Command
+
+git status Show changes in the working directory.
+git log    Show commit history.                  
+git show   Show details of a specific commit.    
+
+## 📝4. Staging & Commit Command
+
+git add <file>          Add a file to the staging area.   
+git add .               Add all files to the staging area.
+git commit -m "message" Save changes with a message.      
+
+## 🔀5. Branching Command
+
+git branch             List all branches.                        
+git branch <name>      Create a new branch.                      
+git checkout <branch>  Switch to another branch.                 
+git checkout -b <name> Create and switch to a new branch.        
+git merge <branch>     Merge another branch into the current one.
+git branch -d <name>   Delete a branch.                          
+
+## 🔁6. Remote Command
+
+git remote -v               View remote connections.                     
+git remote add origin <url> Add a remote repository.                     
+git push origin <branch>    Push changes to a remote branch.             
+git pull origin <branch>    Fetch and merge changes from a remote branch.
+
+## ♻️7. Undo/Reset Command
+
+git reset              Unstage changes.                             
+git reset --hard       Discard all changes and reset to last commit.
+git revert <commit>    Create a new commit that undoes the changes. 
+git checkout -- <file> Restore file to last committed version.      
+
+## 📦8. Tagging Command
+
+git tag           List all tags.   
+git tag <name>    Create a new tag.
+git tag -d <name> Delete a tag.    
+git tag -a v1.0 -m "msg" Create an annotated tag with a message.
+git push origin --tags   Push all tags to the remote.           
+
+### 🔄9. Synchronization & Fetchin
+
+git fetch         Download changes from remote but don’t merge them.
+git fetch --all   Fetch from all remotes.                           
+git pull --rebase Pull with rebase instead of merge.                
+
+### 📦10. Stas
+
+git stash       Save uncommitted changes temporarily.
+git stash apply Reapply stashed changes.             
+git stash list  Show saved stashes.                  
+git stash drop  Delete a stash entry.                
+
+### 🧪11. Bisect (Bug Hunting
+
+git bisect start Start binary search for a bug.          
+git bisect good  Mark current commit as good.            
+git bisect bad   Mark current commit as bad.             
+git bisect reset Stop bisect and return to original HEAD.
+
+### 🧬12. Cherry-pic
+
+git cherry-pick <commit> Apply a specific commit from another branch.
+
+### 🔁13. Reflo
+
+git reflog Show history of all HEAD changes (including deleted).
+
+### 🔗14. Submodule
+
+git submodule add <repo> Add a submodule inside a repo.         
+git submodule init       Initialize submodules.                 
+git submodule update     Update submodules to match repo config.
+
+### 📤15. Archiv
+
+git archive -o out.zip HEAD Create a zip archive of the latest code.
+
+                                                                                 The End :)
